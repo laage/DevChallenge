@@ -7,7 +7,7 @@
 .EXAMPLE
   PS C:> String-Peeler -String "Hello World"
 #>
-function String-Peeler {
+function Out-TrimmedString {
   [CmdletBinding()]
   [OutputType([int])]
   param(
