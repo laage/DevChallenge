@@ -15,21 +15,13 @@ function String-Peeler {
     [string]$String
   )
   
-  begin {
+  if ($String.Length -le 2) {
+    $String + " is 2 or fewer characters long!"
   }
-  
-  process {
-    if ($String.Length -le 2) {
-      $String + " is 2 or fewer characters long!"
-    }
-    else {
-     $String = $String -replace $String[0] 
-     $string = $String -replace $String[-1]
-     $String
-    }
-  }
-  
-  end {
+  else {
+    $String = $String -replace $String[0] 
+    $string = $String -replace $String[-1]
+    $String
   }
 }
 String-Peeler -String "Hello World"
